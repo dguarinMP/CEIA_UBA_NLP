@@ -19,50 +19,42 @@ Los desafíos muestran cómo solucionar dferentes tareas de NLP que van desde el
 
 Cada desafío fue solucionado usando Jupyter Notebooks y librerías de Python como Keras/Tensorflow.
 
-## ¿Cómo usarlo?
+## ¿Cómo usar los notebooks?
 
+0. Clone este repositorio
+
+```bash
+git clone https://github.com/dguarinMP/CEIA_UBA_NLP.git
+cd CEIA_UBA_NLP
+```
+
+1. Se recomienda subir los notebooks a un entorno de Colab para facilitar su ejecución. 
+
+2. Los resultados también se pueden visualizar desde el *Preview* de GitHub.
 
 
 ## Contenido
 
-### Desafio 1: Similaridad coseno
+### [Desafio 1: Vectorización de texto](Desafio1/Desafio_1_VectorizacionTexto.ipynb)
 
-Empleando un dataset en ingles, se midio la similaridad entre los documentos usando la similaridad coseno.
+Usando el dataset *20 newsgroups*, se realizan algunos análisis en torno a la vectorización de texto y los modelos de clasificación Naïve Bayes.
 
-[Embeddings de palabras](desafio_2/desafio_2.ipynb)
+### [Desafío 2: Embeddings de palabras](Desafio2/Desafio_2_CustomEmbeddings.ipynb)
 
-### Desafío 2: Embeddings de caracteres y palabras
+Se emplea el dataset de [notícias financieras de Reuters](https://github.com/duynht/financial-news-dataset) con el fin de generar embeddings o vectores de palabras en el contexto de noticias financieras. La forma de estos vectores es definida en función de cómo las palabras se usan en dicho contexto. 
 
-![Embeddings de palabras](./images/words_embeddings.png)
+### [Desafío 3: Modelo de lenguaje por tokenización de caracteres](Desafio3/Desafio_3_Modelo_caracteres.ipynb)
 
-[Embeddings de palabras](desafio_2/desafio_2.ipynb) 
-#### Objetivo
-Empleando como documento un libro escrito en español se generaron embeddings de caracteres y palabras.
+Con el dataset de [notícias financieras de Reuters](https://github.com/duynht/financial-news-dataset) se realiza:
+- un pre-procesamiento para tokenizar el corpus, estructurar el dataset y separar entre datos de entrenamiento y validación.
+- una implementación de un modelo de lenguaje con arquitecturas de redes neuronales basadas en unidades recurrentes.
+- una generación de nuevas secuencias a partir de secuencias de contexto con las estrategias de *greedy search* y *beam search* determinístico y estocástico. En este último caso se busca observar el efecto de la temperatura en la generación de secuencias.
 
-### Desafío 3: Tokenización
+### [Desafío 4: QA Bot](Desafio4/Desafio_4_BotQA.ipynb)
 
-![Modelo Lenguaje Char](./images/tokenizacion.png)
+A partir de los datos disponibles del *Second Conversational Intelligence Challenge* [ConvAI2](https://research.facebook.com/publications/the-second-conversational-intelligence-challenge-convai2/) de conversaciones en inglés, se construye un BOT que responde ciertas preguntas hechas por el usuario (QA).
 
-- [Preprocesamiento de datos](desafio_3/1_preprocesamiento.ipynb) 
-- [Modelo Lenguaje Char](desafio_3/2_modelo_lenguaje_char.ipynb) 
-- [Modelo Lenguaje Word](desafio_3/2_modelo_lenguaje_word.ipynb) 
+### [Desafío 5: Análisis de sentimiento con Bert](Desafio5/Desafio_5_AnalisisSentimiento.ipynb)
 
-#### Objetivo
-Empleando como documento un libro escrito en español se generó la tokenización de caractéres y palabras.
+Se entrena un modelo de clasificación de análisis de sentimiento para un dataset de recomendaciones de apps utilizando BERT como encoder.
 
-### Desafío 4: LSTM Bot QA
-
-![LSTM Bot QA](./images/bot_qa.png)
-
-- [LSTM Bot QA](desafio_4/desafio_4_bot.ipynb) 
-
-#### Objetivo
-Utilizando datos disponibles del challenge ConvAI2 (Conversational Intelligence Challenge 2) de conversaciones en inglés se contruiyó un BOT para responder a preguntas del usuario (QA).
-
-### Desafío 5: Análisis de sentimientos usando Bert
-
-![Sentimientos Bert](./images/analisis_sentimientos.png)
-
-[Bert Sentiment Analysis](desafio_5/desafio_5_bert_sentiment_analysis.ipynb) 
-#### Objetivo
-Empleando el modelo preentrenado de BERR se implemento una clasificación de reviews de aplicaciones basados en los sentimientos de los usuarios.
